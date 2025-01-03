@@ -1,4 +1,4 @@
-package Hyrtutorials.practice;
+package leetCode;
 
 import java.util.Arrays;
 

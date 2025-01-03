@@ -1,4 +1,4 @@
-package Hyrtutorials.practice;
+package leetCode;
 
 public class LC2108 {
     public static void main(String[] args) {
