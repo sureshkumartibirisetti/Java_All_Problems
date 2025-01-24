@@ -1,4 +1,4 @@
-package Neetcode;
+package Striver.prac.problems;
 
 public class FindDuplicatesAndUniques {
 
