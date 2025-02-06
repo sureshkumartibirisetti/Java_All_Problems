@@ -12,15 +12,22 @@ public class LC189 {
     public static void main(String[] args) {
         int[] nums={1,2,3,4,5,6,7};
         int l=nums.length;
-        int k=3;
-        for(int i=0;i<k;i++){
-            int x=nums[0];
-            for(int j=0;j<l-1;j++){
-                nums[j]=nums[j+1];
-            }
-            nums[l-1]=x;
-        }
+        int k=8;
+        int a=k%l;
+        reverse(nums,0,l-1);
+        reverse(nums,0,a-1);
+        reverse(nums,a,l-1);
         System.out.println(Arrays.toString(nums));
+
+    }
+    static void reverse(int[] arr,int l,int r){
+        while(l<r){
+            int temp=arr[l];
+            arr[l]=arr[r];
+            arr[r]=temp;
+            l++;
+            r--;
+        }
     }
 
 }
