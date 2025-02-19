@@ -1,6 +1,9 @@
 package leetCode;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 //Input: s = "bab", t = "aba"
 //Output: 1
@@ -9,8 +12,8 @@ import java.util.HashMap;
 
 public class LC1347 {
     public static void main(String[] args) {
-        String s = "bab";
-        String t = "aba";
+        String s = "mamama";
+        String t = "mmmmmm";
         int res=0;
         HashMap<Character, Integer> Hp1 = new HashMap<>();
         HashMap<Character, Integer> Hp2 = new HashMap<>();
@@ -20,6 +23,18 @@ public class LC1347 {
             char ch1 = t.charAt(i);
             Hp2.put(ch1, Hp2.getOrDefault(ch1, 0) + 1);
         }
+        for (Map.Entry<Character, Integer> i : Hp1.entrySet()) {
+            char key = i.getKey();
+            if (Hp2.containsKey(key)) {
+                if (i.getValue().equals(Hp2.get(key))) {
+                    res += i.getValue();
+                } else {
+                    res += Math.min(i.getValue(), Hp2.get(key));
+                }
+            }
+        }
+
+        System.out.println(s.length() - res);
 
 
     }
