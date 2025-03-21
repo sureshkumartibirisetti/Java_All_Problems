@@ -16,12 +16,13 @@ public class V_1_Q1_largestElement {
     }
 }
 /* Brute Force(time complexity:O(n log n))
+------------------------------------------------------
 int[] arr={1,6,3,7,2,1,8,9};
 Arrays.sort(arr);
 System.out.println(arr[arr.length-1]);
- */
 
-/* Optimized (time complexity:O(n))
+Optimized (time complexity:O(n))
+---------------------------------------------------------
 int[] arr={1,6,3,7,2,1,8,9};
 int lar=arr[0];
 for(int i=1;i<arr.length;i++){
