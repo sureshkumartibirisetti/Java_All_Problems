@@ -1,4 +1,7 @@
 package leetCode;
+
+import java.util.Arrays;
+
 /*1710. Maximum Units on a Truck
 Example 1:
 Input: boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4
@@ -15,9 +18,32 @@ Output: 91
  */
 public class LC1710 {
     public static void main(String[] args) {
-        int[][] boxTypes={{1,3},{2,2},{3,1}};
-        int truckSize=4;
+        int[][] boxTypes={{5,10},{2,5},{4,7},{3,9}};
+        int truckSize=10;
+        Arrays.sort(boxTypes, (a, b) -> Integer.compare(b[1], a[1]));
+        System.out.println(Arrays.deepToString(boxTypes));
+        //[[5, 10], [3, 9], [4, 7], [2, 5]]
         int res=0;
+        int count=0;
+        for(int[] i:boxTypes){
+           count+=i[0];
+           if(count<=truckSize){
+               res+=(i[0]*i[1]);
+           }else{
+               int a=count-truckSize;
+               int b=i[0]-a;
+               res+=(b*i[1]);
+               break;
+           }
+
+        }
+        System.out.println(res);
+
+
+    }
+}
+/*
+int res=0;
         int f_res=0;
         for(int[] i:boxTypes){
             int a=truckSize-res;
@@ -33,5 +59,4 @@ public class LC1710 {
             }
         }
         System.out.println(f_res);
-    }
-}
+ */
