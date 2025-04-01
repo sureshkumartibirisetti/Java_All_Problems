@@ -21,6 +21,19 @@ Explanation: No three consecutive characters are equal, so return "aab".
 public class LC1957 {
     public static void main(String[] args) {
         String s="leeetcode";
+        StringBuilder res=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            if(res.length()<2){
+                res.append(s.charAt(i));
+            }else{
+                if(res.charAt(res.length()-1)==s.charAt(i) && res.charAt(res.length()-2)==s.charAt(i)){
+                    continue;
+                }else{
+                    res.append(s.charAt(i));
+                }
+            }
+        }
+        System.out.println(res.toString());
 
     }
 }
