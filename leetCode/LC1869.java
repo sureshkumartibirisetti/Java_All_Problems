@@ -25,6 +25,6 @@ The segment of 1s is not longer, so return false.
  */
 public class LC1869 {
     public static void main(String[] args) {
-        
+
     }
 }
