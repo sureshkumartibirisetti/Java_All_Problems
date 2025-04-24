@@ -26,6 +26,19 @@ public class LC1399 {
 
         }
         System.out.println(map);
+        int a=0;
+        for(int i:map.values()){
+            if(i>a){
+                a=i;
+            }
+        }
+        int res=0;
+        for(int j: map.values()){
+            if(a==j){
+                res++;
+            }
+        }
+        System.out.println(res);
 
     }
     static int digitSum(int n){
