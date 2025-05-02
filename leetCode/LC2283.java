@@ -25,14 +25,21 @@ The indices 0 and 1 both violate the condition, so return false.
 public class LC2283 {
     public static void main(String[] args) {
         String num="1210";
-        HashMap<Character,Integer> map=new HashMap<>();
+        HashMap<String,Integer> map=new HashMap<>();
         for(int i=0;i<num.length();i++){
-            char ch=num.charAt(i);
+            String ch=num.charAt(i)+"";
             map.put(ch,map.getOrDefault(ch,0)+1);
         }
         for(int i=0;i<num.length();i++){
-            if(map.get(i)==Integer.parseInt(num.charAt(i)+"")){
-
+            if(map.containsKey(num.charAt(i)+"")){
+                if(num.charAt(i)-'0'!=map.get(num.charAt(i)+"")){
+                    System.out.println("false");
+                }
+            }
+            if(!map.containsKey(num.charAt(i)+"")){
+                if(num.charAt(i)!='0'){
+                    System.out.println("false");
+                }
             }
         }
 

@@ -1,6 +1,8 @@
 package leetCode;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 //2103. Rings and Rods
 //Input: rings = "B0B6G0R6R0R6G9"
@@ -17,11 +19,22 @@ import java.util.HashMap;
 public class LC2103 {
     public static void main(String[] args) {
         String rings="B0B6G0R6R0R6G9";
-        HashMap<Character,Integer> hm=new HashMap<>();
+        int count=0;
+        HashMap<Character, Set<Character>> hm=new HashMap<>();
         for(int i=0;i<rings.length();i+=2){
-            int a= rings.charAt(i+1)-'0';
-            hm.put(rings.charAt(i),a);
+            char color = rings.charAt(i);
+            char rod = rings.charAt(i + 1);
+
+            hm.putIfAbsent(rod, new HashSet<>());
+            hm.get(rod).add(color);
         }
-        System.out.println(hm);
+        for(Set<Character> i:hm.values()){
+            if(i.size()==3){
+                count++;
+            }
+
+        }
+        System.out.println(count);
+
     }
 }
