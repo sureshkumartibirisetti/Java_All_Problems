@@ -21,8 +21,8 @@ Output: true
  */
 public class LC205 {
     public static void main(String[] args) {
-        String s="badc";
-        String t="baba";
+        String s="foo";
+        String t="bar";
         HashMap<Character,Character> map=new HashMap<>();
         for(int i=0;i<s.length();i++){
             if(map.containsKey(t.charAt(i))){
